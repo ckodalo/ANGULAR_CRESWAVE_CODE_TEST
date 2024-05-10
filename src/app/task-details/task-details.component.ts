@@ -8,11 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'app-task-details',
   standalone: false,
   templateUrl: 'task-details.component.html',
-  styles: ['task-details.component.css']
 })
 export class TaskDetailsComponent {
 
-  taskForm: FormGroup; // Declare taskForm Formup
+  taskForm: FormGroup; 
 
   taskId: string | null = null;
   task!: Task;
@@ -31,7 +30,6 @@ export class TaskDetailsComponent {
      }
 
     ngOnInit(): void {
-      // Fetch task details and patch the form
       this.taskId = this.route.snapshot.paramMap.get('id');
       if (this.taskId) {
         this.taskService.getTask(this.taskId).subscribe(task => {
@@ -45,7 +43,6 @@ export class TaskDetailsComponent {
   
 
   onSubmit(): void {
-    console.log(this.taskId)
     if (this.taskForm && this.taskForm.valid) {
       const updatedTask: Task = { ...this.taskForm.value };
 
@@ -56,9 +53,8 @@ export class TaskDetailsComponent {
     }
   }
 
-  // onSubmit(): void {
-  //   this.taskService.editTask(this.task);
-  //   this.router.navigate(['/tasks']);
-  // }
+  goBack(): void {
+    this.router.navigate(['/tasks']);
+  }
 
 }

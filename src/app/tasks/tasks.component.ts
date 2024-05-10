@@ -26,6 +26,11 @@ export class TasksComponent implements OnInit{
       })
   }
 
+  addTask(): void {
+
+    this.router.navigate(['/add'])
+  }
+
   editTask(task: Task): void {
     this.router.navigate(['/edit', task.id]);
   }
