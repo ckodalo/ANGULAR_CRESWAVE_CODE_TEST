@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatTableModule } from '@angular/material/table'
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
 import { MatFormField } from '@angular/material/form-field';
 import { NgModel } from '@angular/forms';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 
 
@@ -24,8 +25,8 @@ import { DeleteConfirmationComponent } from './delete-confirmation/delete-confir
     AppComponent,
     TasksComponent,
     TaskDetailsComponent,
-    DeleteConfirmationComponent
-
+    DeleteConfirmationComponent,
+    AddTaskComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +38,8 @@ import { DeleteConfirmationComponent } from './delete-confirmation/delete-confir
     MatCheckboxModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
     
   ],
 
